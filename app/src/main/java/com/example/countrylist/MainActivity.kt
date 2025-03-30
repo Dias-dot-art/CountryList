@@ -14,12 +14,12 @@ class MainActivity : AppCompatActivity() {
         val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        val imageDetails = getListData()
-        val adapter = CountryAdapter(this, imageDetails)
+        val countryList = createCountryList()
+        val adapter = CountryAdapter(this, countryList)
         recyclerView.adapter = adapter
     }
 
-    private fun getListData(): List<Country> {
+    private fun createCountryList(): List<Country> {
         val list = mutableListOf<Country>()
         list.add(Country("Vietnam", "vn", 98000000))
         list.add(Country("United States", "us", 332000000))
